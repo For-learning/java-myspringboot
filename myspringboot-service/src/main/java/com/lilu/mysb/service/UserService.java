@@ -1,14 +1,14 @@
-package com.lilu.service;
+package com.lilu.mysb.service;
 
+import com.lilu.mysb.dao.UserDao;
+import com.lilu.mysb.dao.domain.User;
+import com.lilu.mysb.dao.domain.UserInfo;
+import com.lilu.mysb.dao.domain.constant.UserConstant;
+import com.lilu.mysb.dao.domain.exception.ConditionException;
+import com.lilu.mysb.service.util.MD5Util;
+import com.lilu.mysb.service.util.RSAUtil;
+import com.lilu.mysb.service.util.TokenUtil;
 import com.mysql.cj.util.StringUtils;
-import com.lilu.dao.UserDao;
-import com.lilu.dao.domain.User;
-import com.lilu.dao.domain.UserInfo;
-import com.lilu.dao.domain.constant.UserConstant;
-import com.lilu.dao.domain.exception.ConditionException;
-import com.lilu.service.util.MD5Util;
-import com.lilu.service.util.RSAUtil;
-import com.lilu.service.util.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,7 +57,7 @@ public class UserService {
         return userDao.getUserByPhone(phone);
     }
 
-    public String login(User user) {
+    public String login(User user) throws Exception {
         String phone = user.getPhone();
         if (StringUtils.isNullOrEmpty(phone)) {
             throw new ConditionException("Phone should not empty!");
@@ -81,5 +81,17 @@ public class UserService {
 
         TokenUtil tokenUtil = new TokenUtil();
         return tokenUtil.generateToken(dbUser.getId());
+    }
+
+    public User getUserInfo(Long userId) {
+        User user = userDao.getUserById(userId);
+        UserInfo userInfo = userDao.getUserInfoById(userId);
+        user.setUserInfo(userInfo);
+        return user;
+    }
+
+    public void updateUserInfo(UserInfo userInfo) {
+        userInfo.setUpdateTime(new Date());
+        userDao.updateUserInfo(userInfo);
     }
 }

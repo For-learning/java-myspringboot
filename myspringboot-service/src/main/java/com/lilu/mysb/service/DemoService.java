@@ -1,6 +1,6 @@
-package com.lilu.service;
+package com.lilu.mysb.service;
 
-import com.lilu.dao.DemoDao;
+import com.lilu.mysb.dao.DemoDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

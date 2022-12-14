@@ -1,4 +1,4 @@
-package com.lilu.dao.domain.constant;
+package com.lilu.mysb.dao.domain.constant;
 
 public interface UserConstant {
 

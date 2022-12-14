@@ -1,4 +1,4 @@
-package com.lilu.service.util;
+package com.lilu.mysb.service.util;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 

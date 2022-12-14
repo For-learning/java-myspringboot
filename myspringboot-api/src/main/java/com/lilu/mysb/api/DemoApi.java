@@ -1,6 +1,6 @@
-package com.lilu.api;
+package com.lilu.mysb.api;
 
-import com.lilu.service.DemoService;
+import com.lilu.mysb.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

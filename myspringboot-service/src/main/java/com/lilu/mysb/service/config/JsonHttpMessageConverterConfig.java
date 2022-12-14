@@ -1,4 +1,4 @@
-package com.lilu.service.config;
+package com.lilu.mysb.service.config;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;

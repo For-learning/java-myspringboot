@@ -1,5 +1,8 @@
-package com.lilu.dao.domain;
+package com.lilu.mysb.dao.domain;
 
+import lombok.Data;
+
+@Data
 public class JsonResponse<T> {
     private String code;
     private String msg;
@@ -30,29 +33,5 @@ public class JsonResponse<T> {
 
     public static JsonResponse<String> fail(String code, String msg) {
         return new JsonResponse<>(code, msg);
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 }

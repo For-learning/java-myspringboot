@@ -1,4 +1,4 @@
-package com.lilu.dao;
+package com.lilu.mysb.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 

@@ -1,5 +1,8 @@
-package com.lilu.dao.domain.exception;
+package com.lilu.mysb.dao.domain.exception;
 
+import lombok.Data;
+
+@Data
 public class ConditionException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
@@ -13,13 +16,5 @@ public class ConditionException extends RuntimeException {
     public ConditionException(String name) {
         super(name);
         code = "500";
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 }
